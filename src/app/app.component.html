@@ -2,7 +2,7 @@
   <h3 class="text-center">Angular Reactive From Validation</h3>
 </header>
 <div class="container">
-  <form [formGroup]="registerForm" (ngSubmit)="registerFormSubmit(registerForm.value)">
+  <form [formGroup]="registerForm" class="was-validated" (ngSubmit)="registerFormSubmit(registerForm.value)">
   <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="form-group">
