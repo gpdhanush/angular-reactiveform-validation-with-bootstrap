@@ -7,19 +7,19 @@
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" formControlName="name" id="name" class="form-control" placeholder="Name" required>
+      <input type="text" formControlName="name" id="name" class="form-control" placeholder="Name" required [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors, 'is-valid': f.name.valid }">
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="text" formControName="emailId" id="email" class="form-control" placeholder="Email" required>
+      <input type="text" [ngClass]="{ 'is-invalid': f.emailId.touched && f.emailId.errors, 'is-valid': f.emailId.valid }" formControName="emailId" id="email" class="form-control" placeholder="Email" required>
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="form-group">
       <label for="mobile">Mobile No:</label>
-      <input type="tel" formControName="mobile" id="mobile" class="form-control" placeholder="Mobile" required>
+      <input type="tel" [ngClass]="{ 'is-invalid': f.mobile.touched && f.mobile.errors, 'is-valid': f.mobile.valid }" formControName="mobile" id="mobile" class="form-control" placeholder="Mobile" required>
     </div>
   </div>
   </div>
@@ -29,9 +29,9 @@
     <!-- DOB  -->
     <div class="form-group">
       <label for="dob">Date of Birth:</label>
-      <input type="text" class="form-control" formControlName="dob" id="dob" required placeholder="Date of Birth"
-              #dp="bsDatepicker" bsDatepicker [(bsValue)]="myDob" [maxDate]="maxDate"
-              [bsConfig]="{showWeekNumbers: false, dateInputFormat: 'DD-MMM-YYYY'}">
+      <input type="text" [ngClass]="{ 'is-invalid': f.dob.touched && f.dob.errors, 'is-valid': f.dob.valid }" class="form-control" formControlName="dob" id="dob" required placeholder="Date of Birth"
+              #dp="bsDatepicker" bsDatepicker [maxDate]="maxDate"
+              [bsConfig]="bsConfig">
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"></div>
