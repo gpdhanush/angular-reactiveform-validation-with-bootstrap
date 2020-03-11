@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
       name: ['', Validators.compose([Validators.required])],
       emailId: ['', Validators.compose([Validators.required,
       Validators.pattern('^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])],
-      mobile: ['', Validators.compose([Validators.required, Validators.maxLength(10)])],
+      mobile: ['', Validators.compose([Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]$')])],
       dob: ['', Validators.compose([Validators.required])]
     });
   }

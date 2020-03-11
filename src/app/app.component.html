@@ -8,18 +8,30 @@
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" formControlName="name" id="name" class="form-control" placeholder="Name" required [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors, 'is-valid': f.name.valid }">
+      <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Name is required!</div>
+            </div>
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="text" [ngClass]="{ 'is-invalid': f.emailId.touched && f.emailId.errors, 'is-valid': f.emailId.valid }" formControName="emailId" id="email" class="form-control" placeholder="Email" required>
+      <input type="text" [ngClass]="{ 'is-invalid': f.emailId.touched && f.emailId.errors, 'is-valid': f.emailId.valid }" formControlName="emailId" id="email" class="form-control" placeholder="Email" required>
+      <div *ngIf="f.emailId.touched && f.emailId.errors" class="invalid-feedback">
+              <div *ngIf="f.emailId.errors.required">Email is required!</div>
+              <div *ngIf="f.emailId.errors.pattern">Enter Valid Email ID!</div>
+            </div>
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
     <div class="form-group">
       <label for="mobile">Mobile No:</label>
-      <input type="tel" [ngClass]="{ 'is-invalid': f.mobile.touched && f.mobile.errors, 'is-valid': f.mobile.valid }" formControName="mobile" id="mobile" class="form-control" placeholder="Mobile" required>
+      <input type="tel" [ngClass]="{ 'is-invalid': f.mobile.touched && f.mobile.errors, 'is-valid': f.mobile.valid }" formControlName="mobile" id="mobile" class="form-control" placeholder="Mobile" required>
+      <div *ngIf="f.mobile.touched && f.mobile.errors" class="invalid-feedback">
+              <div *ngIf="f.mobile.errors.required">Mobile is required!</div>
+              <div *ngIf="f.mobile.errors.pattern">Numeric Only Accepted!</div>
+              <div *ngIf="f.mobile.errors.maxLength">Mobile is not valid format!</div>
+            </div>
     </div>
   </div>
   </div>
@@ -32,6 +44,9 @@
       <input type="text" [ngClass]="{ 'is-invalid': f.dob.touched && f.dob.errors, 'is-valid': f.dob.valid }" class="form-control" formControlName="dob" id="dob" required placeholder="Date of Birth"
               #dp="bsDatepicker" bsDatepicker [maxDate]="maxDate"
               [bsConfig]="bsConfig">
+              <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Name is required!</div>
+            </div>
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"></div>
