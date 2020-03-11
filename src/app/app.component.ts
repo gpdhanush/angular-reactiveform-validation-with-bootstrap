@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+declare var $;
+import * as moment from 'moment';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -8,7 +10,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class AppComponent implements OnInit {
   name = 'Angular';
   maxDate = new Date();
-  myDob: any;
+  myDob = moment().format('DD-MMM-YYYY');
   registerForm: FormGroup;
 
   constructor(private fb: FormBuilder) {}
