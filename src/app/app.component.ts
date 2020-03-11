@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
       dob: ['', Validators.compose([Validators.required])]
     });
   }
+  get f() { return this.registerForm.controls; }
   registerFormSubmit(value) {
     console.log(value);
   }
